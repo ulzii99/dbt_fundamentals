@@ -9,7 +9,7 @@ select table_type,
     'DROP ' || object_type || ' ' || '{{database | upper}}' || '.' || table_schema || '.' || table_name || ';' as drop_statement 
 from {{database}}.information_schema.tables
 where table_schema = upper('{{schema}}')
- and date(last_altered) <= date(dateadd('day', -5, current_date()))
+ and date(last_altered) <= date(dateadd('day', -0, current_date()))
 order by 4 desc
 
 
